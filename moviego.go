@@ -217,8 +217,6 @@ func Concat(videos []Video) (Video, error) {
 			videoParts += fmt.Sprintf("file '%s'\n", file.Name())
 
 			video.Output(file.Name()).Run()
-			fmt.Println("Done:", file.Name())
-
 			defer os.Remove(file.Name())
 		}
 	}
